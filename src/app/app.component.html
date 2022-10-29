@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>{{'Title'| translate}}</span>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">Lang</button>
+    <mat-menu #menu="matMenu">
+      <button [class.selected-lang]="lang==translate.currentLang" mat-menu-item
+        *ngFor="let lang of translate.getLangs()" (click)="changeLang(lang)">{{lang}}</button>
+
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
